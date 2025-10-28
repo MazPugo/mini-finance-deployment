@@ -1,0 +1,279 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.4",
+  "serial": 30,
+  "lineage": "38e9e9bc-aad9-0ef5-3c03-fd4d37eb086f",
+  "outputs": {
+    "public_ip": {
+      "value": "20.162.224.29",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/networkSecurityGroups/mini-finance-nsg",
+            "location": "uksouth",
+            "name": "mini-finance-nsg",
+            "resource_group_name": "mini-finance-rg",
+            "security_rule": [
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "22",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "SSH",
+                "priority": 100,
+                "protocol": "Tcp",
+                "source_address_prefix": "*",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "80",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "HTTP",
+                "priority": 200,
+                "protocol": "Tcp",
+                "source_address_prefix": "*",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "http",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "80",
+            "destination_port_ranges": [],
+            "direction": "Inbound",
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/networkSecurityGroups/mini-finance-nsg/securityRules/HTTP",
+            "name": "HTTP",
+            "network_security_group_name": "mini-finance-nsg",
+            "priority": 200,
+            "protocol": "Tcp",
+            "resource_group_name": "mini-finance-rg",
+            "source_address_prefix": "*",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "ssh",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "22",
+            "destination_port_ranges": [],
+            "direction": "Inbound",
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/networkSecurityGroups/mini-finance-nsg/securityRules/SSH",
+            "name": "SSH",
+            "network_security_group_name": "mini-finance-nsg",
+            "priority": 100,
+            "protocol": "Tcp",
+            "resource_group_name": "mini-finance-rg",
+            "source_address_prefix": "*",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_public_ip",
+      "name": "pub",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "allocation_method": "Static",
+            "ddos_protection_mode": "VirtualNetworkInherited",
+            "ddos_protection_plan_id": null,
+            "domain_name_label": null,
+            "edge_zone": "",
+            "fqdn": null,
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/publicIPAddresses/mini-finance-pip",
+            "idle_timeout_in_minutes": 4,
+            "ip_address": "20.162.224.29",
+            "ip_tags": {},
+            "ip_version": "IPv4",
+            "location": "uksouth",
+            "name": "mini-finance-pip",
+            "public_ip_prefix_id": null,
+            "resource_group_name": "mini-finance-rg",
+            "reverse_fqdn": null,
+            "sku": "Standard",
+            "sku_tier": "Regional",
+            "tags": {},
+            "timeouts": null,
+            "zones": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg",
+            "location": "uksouth",
+            "managed_by": "",
+            "name": "mini-finance-rg",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.1.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "enforce_private_link_endpoint_network_policies": true,
+            "enforce_private_link_service_network_policies": false,
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/virtualNetworks/mini-finance-vnet/subnets/mini-finance-subnet",
+            "name": "mini-finance-subnet",
+            "private_endpoint_network_policies": "Disabled",
+            "private_endpoint_network_policies_enabled": false,
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "mini-finance-rg",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "timeouts": null,
+            "virtual_network_name": "mini-finance-vnet"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.0.0.0/16"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "edge_zone": "",
+            "encryption": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "a84ef6f5-8eae-488d-bde5-6f2739621e53",
+            "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/virtualNetworks/mini-finance-vnet",
+            "location": "uksouth",
+            "name": "mini-finance-vnet",
+            "resource_group_name": "mini-finance-rg",
+            "subnet": [
+              {
+                "address_prefix": "10.0.1.0/24",
+                "id": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/virtualNetworks/mini-finance-vnet/subnets/mini-finance-subnet",
+                "name": "mini-finance-subnet",
+                "security_group": "/subscriptions/a0cbe0a4-e585-4e94-b04a-15f8e68d5d7a/resourceGroups/mini-finance-rg/providers/Microsoft.Network/networkSecurityGroups/mini-finance-nsg"
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
